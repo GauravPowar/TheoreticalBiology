@@ -80,6 +80,8 @@
         nav ul {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         nav ul li {
@@ -158,47 +160,10 @@
 
         .event-meta {
             display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             margin-bottom: 1rem;
             color: var(--secondary);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light);
-        }
-
-        /* Past Papers & Resources */
-        .paper-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .paper-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .paper-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .paper-card h3 {
-            margin-top: 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background: var(--light);
-            color: var(--primary);
-            padding: 0.3rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
         }
 
         /* Footer */
@@ -212,6 +177,7 @@
         .footer-links {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -234,9 +200,18 @@
             .nav-container {
                 flex-direction: column;
             }
+            .nav-container > .logo-container {
+                margin-bottom: 1rem;
+            }
 
             nav ul {
                 margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-top: 0.5rem;
             }
 
             .hero h1 {
@@ -250,18 +225,17 @@
     <header>
         <div class="container nav-container">
             <div class="logo-container">
-                <!-- Replace this with your actual logo (PNG/SVG) -->
                <img src="images/logo.jpg" alt="Logo" class="logo-img">
                 <div class="logo-text">Theoretical<span>Biology</span></div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#papers">Papers</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#join">Join Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="join.html">Join Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -272,11 +246,11 @@
         <div class="container">
             <h1> We are the best biologist amongst mathematicians and best mathematician amongst biologists</h1>
             <p>Join our journal club to discuss cutting-edge research in mathematical biology, evolutionary dynamics, and computational modeling.</p>
-            <a href="#schedule" class="btn">View Upcoming Talks</a>
+            <a href="schedule.html" class="btn">View Upcoming Talks</a>
         </div>
     </section>
 
-    <!-- Upcoming Events -->
+    <!-- Upcoming Events (Brief) -->
     <section class="section" id="schedule">
         <div class="container">
             <h2 class="section-title">Upcoming Events</h2>
@@ -288,123 +262,24 @@
                     <span><i class="fas fa-clock"></i> 11:00 AM (IST)</span>
                 </div>
                 <p>Abstract: Mathematical biology takes many different forms depending on the practitioner. I take mine with one math and one biology (the so-called “big M, little b”), but others like it stronger (“little m, big B”). Under my worldview, mechanistic models are a tool to analyze biological data; a tool that infuses our knowledge of the relevant biological processes into the analytical framework. That might sound very pie-in-the-sky, and so I’ve made up an example to illustrate what I mean. The example (i have taken from the paper) has been constructed so that it doesn’t require any advanced knowledge: if you know how to add and multiply – that’s all you’ll need to understand modelling..</p>
-                <a href="https://meet.google.com/xgp-mtnm-try" class="btn">Join Meeting</a>
+                <a href="schedule.html" class="btn">Learn More & Join</a>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">About the Journal Club</h2>
-            <p>We are an interdisciplinary group of unemployed students (with a superiority complex) who meet regularly to discuss foundational and applied work in theoretical biology. Our discussions span topics from mathematical biology to systems biology and beyond.</p>
-            <p>The journal club is a weekly gathering. One or two members of the club will  present a summary of the chosen paper or reading material, that the whole group has read. Then, the discussion will begin. Attendees can ask clarifying questions, inquire about different aspects of the experimental design, critique the methods, and bring a healthy amount of skepticism (or praise) to the results. . 
-</p>
-        </div>
-    </section>
-
-    <!-- Past Papers -->
-    <section class="section" id="papers">
-        <div class="container">
-            <h2 class="section-title">Recently Discussed Papers</h2>
-            <div class="paper-grid">
-                <div class="paper-card">
-                    <h3>A quantitative description of membrane current and its application to conduction and excitation in nerve</h3>
-                    <p><strong>Author:</strong> 
-A L Hodgkin, A F Huxley</p>
-                    <p><strong>Presenter:</strong> Kushagra, Third year, BSMS</p>
-                    <div>
-                        <span class="tag">mathematical Modeling</span>
-                        <span class="tag">Neuroscience</span>
-                    </div>
-                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/">View Paper →</a>
-                </div>
-                      <div class="paper-card">
-                    <h3>Global brain dynamics embed the motor command sequence of Caenorhabditis elegans. Cell. </h3>
-                    <p><strong>Author:</strong> Kato et al.
-</p>
-                    <p><strong>Presenter:</strong> Hareesh J (PhD, Computational Biology, IMSc)</p>
-                    <div>
-                        <span class="tag">Evolution</span>
-                        <span class="tag">compbio</span>
-                    </div>
-                    <a href="https://drive.google.com/drive/u/0/folders/1_rds6WLc5I8NpTSlWEPSY0UbYBeOe9Rd">slides →</a>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources -->
-       <!-- Resources -->
-    <section class="section" id="resources">
-        <div class="container">
-            <h2 class="section-title">Resources</h2>
-            <div class="paper-grid">
-                <div class="paper-card">
-                    <h3><i class="fas fa-book"></i> Recommended Books</h3>
-                    <ul>
-                        <li>Evolutionary Dynamics - Martin Nowak</li>
-                        <li>Theoretical Ecology - May & McLean</li>
-                        <li>Mathematical Biology - J.D. Murray</li>
-                    </ul>
-                </div>
-                <div class="paper-card">
-                    <h3><i class="fas fa-laptop-code"></i> Software Tools</h3>
-                    <ul>
-                        <li>Python (SciPy, NumPy, Matplotlib)</li>
-                        <li>R (deSolve, ggplot2)</li>
-                        <li>NetLogo (Agent-based Modeling)</li>
-                        <li>Julia (Differential Equations)</li>
-                    </ul>
-                </div>
-                <div class="paper-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Learning Resources</h3>
-                    <ul>
-                        <li>Coursera: Introduction to Systems Biology</li>
-                        <li>edX: Mathematical Modeling</li>
-                        <li>YouTube: Theoretical Biology Lectures</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Us Section -->
-    <section class="section about" id="join">
-        <div class="container">
-            <h2 class="section-title">Join Our Journal Club</h2>
-            <div class="event-card">
-                <h3>Participation Details</h3>
-                <p>We meet every sunday at 11:00 AM in online format for now, once back to the campus, we will hold in-person sessions.</p>
-                <p>To receive meeting invites and paper announcements:</p>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="anshu22@iiserbpr.ac.in" class="btn">
-                        <i class="fas fa-envelope"></i> Email Us to Join
-                    </a>
-                    <a href="https://calendar.google.com/calendar" class="btn" target="_blank" style="margin-left: 1rem;">
-                        <i class="fas fa-calendar-plus"></i> Add to Calendar
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#schedule">Schedule</a>
-                <a href="#papers">Papers</a>
-                <a href="#resources">Resources</a>
-                <a href="#join">Join Us</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="papers.html">Papers</a>
+                <a href="resources.html">Resources</a>
+                <a href="join.html">Join Us</a>
             </div>
             
-            <p>&copy; 2024 Theoretical Biology Journal Club | 
-             
-            </p>
+            <p>&copy; 2024 Theoretical Biology Journal Club</p>
         </div>
     </footer>
 </body>
